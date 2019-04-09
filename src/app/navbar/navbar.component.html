@@ -1,0 +1,36 @@
+<mat-toolbar scroll class="mat-elevation-z6">
+  <span class="sync-logo" fxLayout="row" fxShow="true" *ngIf="authService.loggedIn()">
+    Sync
+    </span>
+
+  <span class="example-spacer"></span>
+
+  <div class="nav-menu" fxLayout="row" fxLayoutAlign="space-evenly center" fxShow="true">
+    <button mat-icon-button class="menu"[matMenuTriggerFor]="menu"  *ngIf="authService.loggedIn()">
+      <mat-icon>account_circle</mat-icon>
+    </button>
+  </div>
+</mat-toolbar>
+
+
+<mat-menu #menu="matMenu" xPosition="after">
+  <span mat-menu-item>
+    {{user?.name}}
+  </span>
+  <button mat-menu-item routerLink="../portal">
+    <mat-icon>home</mat-icon>
+    <span>home</span>
+  </button>
+  <button mat-menu-item routerLink="../profile">
+    <mat-icon>person</mat-icon>
+    <span>profile</span>
+  </button>
+  <button mat-menu-item (click)="onLogoutClick()">
+    <mat-icon>exit_to_app</mat-icon>
+    <span>logout</span>
+  </button>
+  <button mat-menu-item routerLink="../help">
+    <mat-icon>help</mat-icon>
+    <button mat-button routerLink="help">help</button>
+  </button>
+</mat-menu>

@@ -1,0 +1,66 @@
+<mat-card fxLayoutAlign="center" fxLayout="column">
+  <mat-card-header>
+    <h1 mat-card-title>Create Shift</h1>
+  </mat-card-header>
+  <mat-card-content>
+    <div fxLayout="row" fxLayoutAlign="center start">
+    <mat-form-field class="example-full-width">
+      <mat-select placeholder="Select a DJ" [(ngModel)]="dj" name="dj" required="required">
+        <mat-option *ngFor="let dj of djs" [value]="dj">
+          {{dj.username}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button mat-raised-button color="primary" [disabled]="dj.username == null" (click)="selectDJ()">Select</button>
+
+    </div>
+  </mat-card-content>
+</mat-card>
+<mat-card *ngIf="open == true">
+  <div fxFlex="50">
+    <h3 mat-card-subtitle>Selecting shift for: {{dj.name}} {{dj.last}}</h3>
+    <h4>Blocked dates:</h4>
+    <div *ngFor="let date of dates" style="color: red">{{date}} </div>
+  </div>
+</mat-card>
+
+<mat-card *ngIf="open == true">
+  <mat-card-header>
+    <h1 mat-card-title>Select Venue, Time, Date</h1>
+  </mat-card-header>
+  <mat-card-content>
+
+    <mat-form-field class="example-full-width">
+      <mat-select placeholder="Select a Venue" [(ngModel)]="venue" name="venue" required="required">
+        <mat-option *ngFor="let venue of venues" [value]="venue">
+          {{venue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-select placeholder="Select a Time" [(ngModel)]="time" name="time" required="required">
+        <mat-option *ngFor="let time of times" [value]="time">
+          {{time}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input matInput  matInput
+             [matDatepicker]="picker"
+             placeholder="Choose dates"
+             [(ngModel)]="date"
+             (dateInput)="date.getDay()"
+             [min]="minDate"
+             name="date" >
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+
+
+    <button mat-button color="accent" (click)="submitShift()" [disabled]="disable">Submit</button>
+
+  </mat-card-content>
+</mat-card>

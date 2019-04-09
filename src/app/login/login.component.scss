@@ -1,0 +1,33 @@
+@import "../../../src/styles.scss";
+
+.login-card {
+  margin-top: 60px;
+  width: 75%;
+  height: 100%;
+  border-radius: 5px;
+  form{
+    .mat-form-field{
+      width: 50%;
+    }
+    .mat-raised-button {
+      color: white;
+      font-weight: 300;
+      font-size: 12px;
+      font-family: Roboto, "Helvetica Neue", sans-serif;
+      background-color: #0BA5DB;
+      box-shadow: #eeeeee;
+      border-radius: 4px;
+      width: 85%;
+  }
+  }
+}
+
+
+.sync-logo{
+  font-family: Righteous, sans-serif;
+  font-weight: bold;
+  font-size: 48px;
+  letter-spacing: 0;
+  color: #0BA5DB;
+}
+
