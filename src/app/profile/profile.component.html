@@ -48,64 +48,6 @@
                 </mat-card-actions>
               </mat-card>
             </div>
-
-            <!--<div *ngIf="user?.role === 'DJ'" fxFlex="50" fxLayoutGap="10px" fxLayout="column" fxLayoutAlign="start center">-->
-              <!--<mat-card class="Info-card preferences" fxLayout="column">-->
-                <!--<mat-toolbar [ngStyle]="{'background-color': getColor(user?.role)}">-->
-                  <!--<h1>Preferences</h1>-->
-                <!--</mat-toolbar>-->
-
-                <!--<mat-card-actions fxLayoutAlign="center center">-->
-                  <!--<button mat-raised-button fxFlex (click)="updateUser(user)">-->
-                    <!--<mat-icon>save</mat-icon><span> </span>Save-->
-                  <!--</button>-->
-                <!--</mat-card-actions>-->
-              <!--</mat-card>-->
-            <!--</div>-->
-            <!--<div *ngIf="user?.role === 'Manager'" fxFlex="50" fxLayoutGap="10px" fxLayout="column">-->
-              <!--<div fxLayout="column">-->
-                <!--<mat-card class="Info-card preferences" fxLayout="column">-->
-                  <!--<mat-toolbar [ngStyle]="{'background-color': getColor(user?.role)}">-->
-                    <!--<h1>Set Availability Deadline</h1>-->
-                  <!--</mat-toolbar>-->
-                  <!--<mat-card-content>-->
-                    <!--<mat-card class="profile-attribute" fxLayout="row">-->
-                      <!--<mat-card-header class="info">-->
-                        <!--Set Deadline-->
-                      <!--</mat-card-header>-->
-                      <!--<div>-->
-                        <!--<mat-slide-toggle [(ngModel)]= "checked" (change)="toggle()">Yes</mat-slide-toggle>-->
-                      <!--</div>-->
-                    <!--</mat-card>-->
-                  <!--</mat-card-content>-->
-                  <!--<div *ngIf="checked" style="max-height: 70vh">-->
-                    <!--<mat-card class="profile-options">-->
-                      <!--<h2 mat-card-title>Choose Dates: </h2>-->
-                      <!--<mat-card-content fxLayout="column">-->
-                        <!--<form (submit)="onSubmit()" fxLayout="column">-->
-                          <!--&lt;!&ndash;Start&ndash;&gt;-->
-                          <!--<mat-form-field>-->
-                            <!--<input matInput [matDatepicker]="startpicker" [min]="minDate" placeholder="Choose a start date">-->
-                            <!--<mat-datepicker-toggle matSuffix [for]="startpicker"></mat-datepicker-toggle>-->
-                            <!--<mat-datepicker #startpicker touchUi="true"></mat-datepicker>-->
-                          <!--</mat-form-field>-->
-                          <!--&lt;!&ndash;End&ndash;&gt;-->
-                          <!--<mat-form-field>-->
-                            <!--<input matInput [matDatepicker]="endpicker" [min]="minDate" placeholder="Choose end date">-->
-                            <!--<mat-datepicker-toggle matSuffix [for]="endpicker"></mat-datepicker-toggle>-->
-                            <!--<mat-datepicker #endpicker touchUi="true"></mat-datepicker>-->
-                          <!--</mat-form-field>-->
-
-                          <!--<button mat-raised-button type="submit" color="primary">Submit</button>-->
-                        <!--</form>-->
-                      <!--</mat-card-content>-->
-                    <!--</mat-card>-->
-                  <!--</div>-->
-                <!--</mat-card>-->
-              <!--</div>-->
-
-            <!--</div>-->
-
           </div>
         </mat-tab>
       </mat-tab-group>
