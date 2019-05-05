@@ -5,7 +5,7 @@ import {VenueService} from "../../services/venue.service";
 import {UserService} from "../../services/user.service";
 import {AuthService} from "../../services/auth.service";
 import {MatDialog, MatSnackBar} from "@angular/material";
-import {AddShiftComponent} from "../../dialogs/add-shift/add-shift.component";
+import {AddShiftComponent} from "../../components/dialogs/add-shift/add-shift.component";
 
 export interface CalendarDate {
   mDate: moment.Moment;
