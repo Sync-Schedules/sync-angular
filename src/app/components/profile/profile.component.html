@@ -1,0 +1,53 @@
+<mat-toolbar class="portal-bar" color="primary" [ngStyle]="{'background-color': getColor(user?.role)}"><span>{{user?.role}}</span></mat-toolbar>
+<mat-tab-group>
+        <mat-tab label="Profile">
+          <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+            <div fxFlex="50">
+              <mat-card class="Info-card">
+                <mat-toolbar [ngStyle]="{'background-color': getColor(user?.role)}">
+                  <h1>Profile</h1>
+                </mat-toolbar>
+                <mat-card-content>
+                  <mat-card class="profile-attribute" fxLayout="row">
+                    <mat-card class="label" fxLayoutAlign="center center">
+                      <mat-icon>font_download</mat-icon>
+                    </mat-card>
+                    <mat-card class="info">
+                      <p>{{user?.name}}<span>  </span> {{user?.last}}</p>
+                    </mat-card>
+                  </mat-card>
+                  <mat-card class="profile-attribute" fxLayout="row">
+                    <mat-card class="label" fxLayoutAlign="center center">
+                      <mat-icon>account_box</mat-icon>
+                    </mat-card>
+                    <mat-card class="info">
+                      {{user?.username}}
+                    </mat-card>
+                  </mat-card>
+                    <mat-card class="profile-attribute" fxLayout="row">
+                      <mat-card class="label" fxLayoutAlign="center center">
+                        <mat-icon>email</mat-icon>
+                      </mat-card>
+                      <mat-card class="info">
+                        {{user?.email}}
+                      </mat-card>
+                    </mat-card>
+                      <mat-card class="profile-attribute" fxLayout="row">
+                        <mat-card class="label" fxLayoutAlign="center center">
+                          <mat-icon>work</mat-icon>
+                        </mat-card>
+                        <mat-card class="info">
+                          {{user?.role}}
+                        </mat-card>
+                      </mat-card>
+                </mat-card-content>
+                <mat-card-actions fxLayoutAlign="center center">
+                  <button mat-raised-button fxFlex (click)="updateUser(user)">
+                    <mat-icon>mode_edit</mat-icon><span> </span>Edit
+                  </button>
+                </mat-card-actions>
+              </mat-card>
+            </div>
+          </div>
+        </mat-tab>
+      </mat-tab-group>
